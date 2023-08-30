@@ -1,4 +1,4 @@
-Project Name: Medicify: Opinion Summarisation of Medical Data
+## Medicify: Opinion Summarisation of Medical Data
 
 Description: 
 In this project, we aim to collect and organise the medical data (lab reports and prescription) of an individual under a unique id of the user.
