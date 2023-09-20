@@ -1,7 +1,7 @@
 # Medicify: Opinion Summarisation of Medical Data 💚
 
 ## Problem Statement: Modernizing Medical Document Management (Prescriptions and Reports) for Enhanced Healthcare Access
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 The challenge at hand pertains to the cumbersome task of carrying physical prescriptions and medical reports to doctors while visiting for an appointment. This long-standing practice not only annoys patients but also creates logistical challenges, particularly for seniors who frequently manage a plethora of hard-copy medical documents. This inefficiency of the healthcare system increases the potential risk of documents being lost or misplaced. This unwanted hustle gives a lot of stress and physical burden to elderly people, who may already face mobility issues. 
 
 The nature of this problem is not just limited to patients but extends to Healthcare providers as well, notably doctors and their medical staff. As they must sift through loads of documents during appointments, this practice introduces inefficiencies into their workflow and could delay access to vital patient data and impede the effectiveness of consultations. These reports can manifest errors in the diagnosis process as they are prone to wear and tear in the long term.
