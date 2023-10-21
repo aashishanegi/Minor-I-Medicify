@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background: url(2.jpg);
+  background-size: cover;
+  color-scheme: normal;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  display: inline;
+  background-color: #1D5D9B;
+  letter-spacing: 3px;
+  height: 25px;
+  font-size: 16px;
+}
+.bottom .credit {
+  color: rgb(255, 255, 255);
+}
+
+nav {
+  background: #1D5D9B;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  padding: 0 100px;
+  font-weight: bold;
+  margin-bottom: 30px 40px;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 7px;
+  border-radius: 3px;
+}
+a:hover {
+  background: #3498db;
+}
+label {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  font-size: 1.5vw;
+  color: #ffffff;
+  -webkit-text-stroke: 0.3w #383d52;
+  text-transform: uppercase;
+}
+label::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #ffffff;
+  -webkit-text-stroke: 0vw #ffffff;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+iframe {
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 50px;
+  margin-left: 1400px;
+  margin-right: 20px;
+  box-shadow: 0px 14px 28px black;
+}
+.logo {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: none;
+  }
+  to {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+  }
+}
+
+/*#glow {
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ffff00,
+    #ff00f3,
+    #0033ff,
+    #ff00c4,
+    #ff0000
+  );
+  font-size: 100px;
+  margin: 0;
+  background-size: 400%;
+  letter-spacing: 5px;
+  font-weight: 600;
+  word-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  background-clip: text;
+  animation: animate 10s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}*/
