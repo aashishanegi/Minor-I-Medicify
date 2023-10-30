@@ -145,6 +145,9 @@ nav {
     -webkit-text-stroke: 0.3w #383d52;
     text-transform: uppercase;
   }
+  label a{
+    color: #ffffff;
+  }
   label::before {
     content: attr(data-text);
     position: absolute;
