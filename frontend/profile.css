@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background-color: #ffffff;
+  background-size: cover;
+  color-scheme: normal;
+}
+
+.patient-details {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 60px;
+  margin-left: 400px;
+  background-color: #fff;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.patient-info {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+.bottom {
+  padding-top:0.3%;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  display: inline;
+  background-color: #1D5D9B;
+  letter-spacing: 3px;
+  height: 25px;
+  font-size: 16px;
+}
+.bottom .credit {
+  color: rgb(255, 255, 255);
+}
+
+nav {
+  background: #1D5D9B;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  padding: 0 100px;
+  font-weight: bold;
+  margin-bottom: 30px 40px;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 7px;
+  border-radius: 3px;
+}
+a:hover {
+  background: #3498db;
+}
+label1 {
+  font-family: "Poppins", sans-serif;
+  padding-top: 0.8%;
+  position:fixed;
+  font-size: 1.5vw;
+  color: #ffffff;
+  -webkit-text-stroke: 0.3w #ffffff;
+  text-transform: uppercase;
+}
+label1 a{
+  color: #ffffff;
+}
+label1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #ffffff;
+  -webkit-text-stroke: 0vw #383d52;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+label {
+  width: 120px;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+iframe {
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 50px;
+  margin-left: 1400px;
+  margin-right: 20px;
+  box-shadow: 0px 14px 28px black;
+}
+.logo {
+  animation: glow 1s ease-in-out infinite alternate;
+  color:#ffffff;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: none;
+  }
+  to {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+  }
+}
+.center-container {
+  display: flex;
+  height: 75vh;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  padding-left: 13px;
+  text-align: left;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px; 
+  color: #010727; 
+}
+.submit-button-container {
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.submit-button {
+  background-color: #1D5D9B; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #3498db; 
+}
+
+
+
+

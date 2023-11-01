@@ -15,7 +15,7 @@
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="#">
-          <h1 id="Medicify">Medicify</h1>
+          <h1 id="Medicify" class="val2">Medicify</h1>
 
           <input type="text" placeholder="Name" id="name" />
           <input type="email" placeholder="Email" id="mail" />
@@ -27,11 +27,11 @@
     
       <div class="form-container sign-in-container">
         <form action="#">
-          <h1>Sign In</h1>
+          <h1 class="val">Sign In</h1>
 
           <input type="email" placeholder="Email" id="mail" />
           <input type="password" placeholder="Password" id="pass" />
-          <button>Log In</button>
+          <button id="loginButton">Log In</button>
           <br /><br /><br /><br /><br /><br />
         </form>
       </div>
@@ -52,7 +52,6 @@
           <div class="overlay-panel overlay-right">
             <h1>Medicify</h1>
             <p style="font-weight: bold; font-family:sans-serif; color: black;">Opinion Summarisation of Medical Data</p>
-            <br />
             <p style=" font-family:Verdana, Geneva, Tahoma, sans-serif; color: black;">Don't have an account?</p>
             <button class="press" id="signUp" style="color: rgb(57, 49, 5)">
               Sign Up
@@ -65,11 +64,16 @@
       const signUpButton = document.getElementById("signUp");
       const signInButton = document.getElementById("signIn");
       const container = document.getElementById("container");
+      const loginButton = document.getElementById("loginButton");
 
       signUpButton.addEventListener("click", () => {
         container.classList.add("right-panel-active");
       });
+      
 
+      loginButton.addEventListener("click", () => {
+      window.location.href = "home.html";
+      });
       signInButton.addEventListener("click", () => {
         container.classList.remove("right-panel-active");
       });
