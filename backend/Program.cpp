@@ -4,14 +4,14 @@
 #include <string>
 #include <vector>
 
-// Define a struct to store patient data
+
 struct PatientDetails {
     std::string Pid;
     std::string Name;
     int Age;
     std::string Gender;
 };
-// Define a struct to store blood data
+
 struct PatientData {
     std::string Pid;
     double RedBloodCellCount;
@@ -24,7 +24,7 @@ struct PatientData {
     double Hemoglobin;
 };
 
-// Define a struct to store diabetes data
+
 struct DiabetesData {
     std::string Pid;
     int Glucose;
@@ -36,7 +36,7 @@ struct DiabetesData {
     int Outcome;
 };
 
-// Define a struct to store liver data
+
 struct LiverData {
     std::string Pid;
     double TotalBilirubin;
@@ -50,7 +50,7 @@ struct LiverData {
     int Dataset;
 };
 
-// Function to perform a blood test for a given PID
+
 void bloodTest(const std::string& searchPid,const std::vector<PatientDetails>& patientDetails, const std::vector<PatientData>& patientData, const std::vector<DiabetesData>& diabetesData, const std::vector<LiverData>& liverData) {
     bool found = false;
     
@@ -118,7 +118,7 @@ void bloodTest(const std::string& searchPid,const std::vector<PatientDetails>& p
         std::cout << "Patient with PID " << searchPid << " not found." << std::endl;
     }
 }
-// Function to add a new patient to the patient details dataset
+
 void addPatientDetails(std::vector<PatientDetails>& patientDetails) {
     PatientDetails newPatient;
     std::cout << "Enter PID: ";
@@ -131,10 +131,10 @@ void addPatientDetails(std::vector<PatientDetails>& patientDetails) {
     std::cout << "Enter Gender (Male/Female): ";
     std::cin >> newPatient.Gender;
 
-    // Append the new patient to the vector
+    
     patientDetails.push_back(newPatient);
 
-    // Append the new patient to the patientdetails.csv file
+    
     std::ofstream patientDetailsFile("patientdetails.csv", std::ios::app); // Open the file in append mode
     if (patientDetailsFile.is_open()) {
         patientDetailsFile << newPatient.Pid << ',' << newPatient.Name << ',' << newPatient.Age << ',' << newPatient.Gender << '\n';
@@ -143,7 +143,7 @@ void addPatientDetails(std::vector<PatientDetails>& patientDetails) {
         std::cerr << "Failed to open patient details file for writing." << std::endl;
     }
 }
-// Function to add a new patient to the patient data dataset
+
 void addPatientData(std::vector<PatientData>& patientData) {
     PatientData newPatient;
     std::cout << "Enter PID: ";
@@ -165,11 +165,11 @@ void addPatientData(std::vector<PatientData>& patientData) {
     std::cout << "Enter Hemoglobin: ";
     std::cin >> newPatient.Hemoglobin;
 
-    // Append the new patient to the vector
+    
     patientData.push_back(newPatient);
 
-    // Append the new patient to the patientdata.csv file
-    std::ofstream patientDataFile("blood.csv", std::ios::app); // Open the file in append mode
+
+    std::ofstream patientDataFile("blood.csv", std::ios::app); 
     if (patientDataFile.is_open()) {
         patientDataFile << newPatient.Pid << ',' << newPatient.RedBloodCellCount << ',' << newPatient.PackedCellVolume << ','
                         << newPatient.MeanCellVolume << ',' << newPatient.MeanCellHemoglobin << ','
@@ -181,7 +181,7 @@ void addPatientData(std::vector<PatientData>& patientData) {
     }
 }
 
-// Function to add new diabetes data to the diabetes data dataset
+
 void addDiabetesData(std::vector<DiabetesData>& diabetesData) {
     DiabetesData newDiabetesData;
     std::cout << "Enter PID: ";
@@ -201,11 +201,11 @@ void addDiabetesData(std::vector<DiabetesData>& diabetesData) {
     std::cout << "Enter Outcome: ";
     std::cin >> newDiabetesData.Outcome;
 
-    // Append the new diabetes data to the vector
+    
     diabetesData.push_back(newDiabetesData);
 
-    // Append the new diabetes data to the diabetesdata.csv file
-    std::ofstream diabetesDataFile("diabetes.csv", std::ios::app); // Open the file in append mode
+   
+    std::ofstream diabetesDataFile("diabetes.csv", std::ios::app); 
     if (diabetesDataFile.is_open()) {
         diabetesDataFile << newDiabetesData.Pid << ',' << newDiabetesData.Glucose << ',' << newDiabetesData.BloodPressure << ','
                          << newDiabetesData.SkinThickness << ',' << newDiabetesData.Insulin << ','
@@ -215,7 +215,7 @@ void addDiabetesData(std::vector<DiabetesData>& diabetesData) {
         std::cerr << "Failed to open diabetes data file for writing." << std::endl;
     }
 }
-// Function to add new liver data to the liver data dataset
+
 void addLiverData(std::vector<LiverData>& liverData) {
     LiverData newLiverData;
     std::cout << "Enter PID: ";
@@ -239,11 +239,11 @@ void addLiverData(std::vector<LiverData>& liverData) {
     std::cout << "Enter Dataset: ";
     std::cin >> newLiverData.Dataset;
 
-    // Append the new liver data to the vector
+   
     liverData.push_back(newLiverData);
 
-    // Append the new liver data to the liverdata.csv file
-    std::ofstream liverDataFile("liver.csv", std::ios::app); // Open the file in append mode
+   
+    std::ofstream liverDataFile("liver.csv", std::ios::app); 
     if (liverDataFile.is_open()) {
         liverDataFile << newLiverData.Pid << ','<< newLiverData.TotalBilirubin << ',' << newLiverData.DirectBilirubin << ','
                       << newLiverData.AlkalinePhosphotase << ',' << newLiverData.AlamineAminotransferase << ','
@@ -268,7 +268,7 @@ int main() {
     }
 
     std::string line;
-    // Read the header line (column names)
+    
     std::getline(patientDetailsFile, line);
 
     while (std::getline(patientDetailsFile, line)) {
@@ -279,7 +279,7 @@ int main() {
         std::getline(iss, details.Pid, ',');
         std::getline(iss, details.Name, ',');
         iss >> details.Age;
-        std::getline(iss, value, ','); // Read and discard the comma
+        std::getline(iss, value, ','); 
         std::getline(iss, details.Gender, ',');
 
         patientDetails.push_back(details);
@@ -287,7 +287,7 @@ int main() {
     patientDetailsFile.close();
     
     
-    // Read the blood test data from the first CSV file and store it in a vector of PatientData
+    
     std::vector<PatientData> patientData;
     std::ifstream bloodTestDataFile("blood.csv");
     if (!bloodTestDataFile.is_open()) {
@@ -295,7 +295,7 @@ int main() {
         return 1;
     }
 
-    // Read the header line (column names)
+    
     std::getline(bloodTestDataFile, line);
 
     while (std::getline(bloodTestDataFile, line)) {
@@ -324,7 +324,7 @@ int main() {
     }
     bloodTestDataFile.close();
 
-    // Read the diabetes test data from the second CSV file and store it in a vector of DiabetesData
+    
     std::vector<DiabetesData> diabetesData;
     std::ifstream diabetesTestDataFile("diabetes.csv");
     if (!diabetesTestDataFile.is_open()) {
@@ -332,7 +332,7 @@ int main() {
         return 1;
     }
 
-    // Read the header line (column names)
+    
     std::getline(diabetesTestDataFile, line);
 
     while (std::getline(diabetesTestDataFile, line)) {
@@ -359,7 +359,7 @@ int main() {
     }
     diabetesTestDataFile.close();
 
-    // Read the liver test data from the third CSV file and store it in a vector of LiverData
+    
     std::vector<LiverData> liverData;
     std::ifstream liverTestDataFile("liver.csv");
     if (!liverTestDataFile.is_open()) {
@@ -367,7 +367,7 @@ int main() {
         return 1;
     }
 
-    // Read the header line (column names)
+    
     std::getline(liverTestDataFile, line);
 
     while (std::getline(liverTestDataFile, line)) {
@@ -398,7 +398,7 @@ int main() {
     }
     liverTestDataFile.close();
 
-    // Ask the user for a PID to perform a blood test
+    
 int choice;
     do {
         std::cout << "Select an option:\n";
@@ -432,7 +432,7 @@ int choice;
     std::string searchPid;
     std::cout << "Enter PID for the searching: \n";
     std::cin >> searchPid;
-    // Call the blood test function
+    
     bloodTest(searchPid, patientDetails, patientData, diabetesData, liverData);
 
     return 0;

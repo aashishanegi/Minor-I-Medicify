@@ -4,7 +4,7 @@
 #include <vector>
 #include <cmath>
 
-// Define the structure to hold data
+
 struct Data {
     int Outcome;
     double Glucose;
@@ -15,14 +15,14 @@ struct Data {
     double DiabetesPedigreeFunction;
 };
 
-// Sigmoid function
+
 double sigmoid(double x) {
     return 1.0 / (1.0 + std::exp(-x));
 }
 
 // Predict the outcome based on the model
 int predict(double weights[], Data data) {
-    double z = weights[0]; // Bias term
+    double z = weights[0]; 
     z += weights[1] * data.Glucose;
     z += weights[2] * data.BloodPressure;
     z += weights[3] * data.SkinThickness;
@@ -34,7 +34,7 @@ int predict(double weights[], Data data) {
     return (probability >= 0.5) ? 1 : 0;
 }
 
-// Update weights using gradient descent
+// Update weights
 void updateWeights(double weights[], Data data, double learningRate, int target) {
     double prediction = sigmoid(weights[0] +
                                 weights[1] * data.Glucose +
@@ -46,7 +46,7 @@ void updateWeights(double weights[], Data data, double learningRate, int target)
     
     double error = target - prediction;
 
-    weights[0] += learningRate * error;  // Update bias term
+    weights[0] += learningRate * error;  
     weights[1] += learningRate * error * data.Glucose;
     weights[2] += learningRate * error * data.BloodPressure;
     weights[3] += learningRate * error * data.SkinThickness;
@@ -56,12 +56,12 @@ void updateWeights(double weights[], Data data, double learningRate, int target)
 }
 
 int main() {
-    // Initialize weights and hyperparameters
+    
     double weights[] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     double learningRate = 0.01;
     int epochs = 1000;
 
-    // Read the dataset from a CSV file
+    // Read the dataset 
     std::vector<Data> dataset;
     std::ifstream file("diabetes.csv");
     std::string line;
@@ -70,7 +70,7 @@ int main() {
         Data data;
         std::stringstream ss(line);
         std::string value;
-        getline(ss, value, ','); // Skip the Pid field
+        getline(ss, value, ','); 
 
         try {
             getline(ss, value, ',');
@@ -96,7 +96,7 @@ int main() {
 
             dataset.push_back(data);
         } catch (const std::invalid_argument&) {
-            // Handle the case where data is not in the expected format
+            
             std::cerr << "Skipping line due to invalid data: " << line << std::endl;
         }
     }
