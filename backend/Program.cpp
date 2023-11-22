@@ -12,7 +12,7 @@ struct PatientDetails {
     std::string Gender;
 };
 
-struct PatientData {
+struct BloodData {
     std::string Pid;
     double RedBloodCellCount;
     double PackedCellVolume;
@@ -51,7 +51,7 @@ struct LiverData {
 };
 
 
-void bloodTest(const std::string& searchPid,const std::vector<PatientDetails>& patientDetails, const std::vector<PatientData>& patientData, const std::vector<DiabetesData>& diabetesData, const std::vector<LiverData>& liverData) {
+void search(const std::string& searchPid,const std::vector<PatientDetails>& patientDetails, const std::vector<BloodData>& patientData, const std::vector<DiabetesData>& diabetesData, const std::vector<LiverData>& liverData) {
     bool found = false;
     
     for (const PatientDetails& details : patientDetails) {
@@ -66,7 +66,7 @@ void bloodTest(const std::string& searchPid,const std::vector<PatientDetails>& p
     }
     
     
-    for (const PatientData& patient : patientData) {
+    for (const BloodData& patient : patientData) {
         if (patient.Pid == searchPid) {
             found = true;
             std::cout << "Blood Test Results for PID " << searchPid << ":\n";
@@ -144,8 +144,8 @@ void addPatientDetails(std::vector<PatientDetails>& patientDetails) {
     }
 }
 
-void addPatientData(std::vector<PatientData>& patientData) {
-    PatientData newPatient;
+void addBloodData(std::vector<BloodData>& patientData) {
+    BloodData newPatient;
     std::cout << "Enter PID: ";
     std::cin >> newPatient.Pid;
     std::cout << "Enter Red Blood Cell Count: ";
@@ -288,7 +288,7 @@ int main() {
     
     
     
-    std::vector<PatientData> patientData;
+    std::vector<BloodData> patientData;
     std::ifstream bloodTestDataFile("blood.csv");
     if (!bloodTestDataFile.is_open()) {
         std::cerr << "Failed to open blood test data file." << std::endl;
@@ -300,7 +300,7 @@ int main() {
 
     while (std::getline(bloodTestDataFile, line)) {
         std::istringstream iss(line);
-        PatientData patient;
+        BloodData patient;
         std::string value;
 
         std::getline(iss, patient.Pid, ',');
@@ -415,7 +415,7 @@ int choice;
                 addPatientDetails(patientDetails);
                 break;
             case 2:
-               addPatientData(patientData);
+               addBloodData(patientData);
                 break;
             case 3:
                addDiabetesData(diabetesData);
@@ -433,7 +433,7 @@ int choice;
     std::cout << "Enter PID for the searching: \n";
     std::cin >> searchPid;
     
-    bloodTest(searchPid, patientDetails, patientData, diabetesData, liverData);
+    search(searchPid, patientDetails, patientData, diabetesData, liverData);
 
     return 0;
 }
